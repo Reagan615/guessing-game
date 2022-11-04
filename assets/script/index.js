@@ -56,13 +56,13 @@ onEvent('click', btn, function() {
     let a = numberOne.value.trim();
     if(isNumber(a)) {
         if(a > random) {
-            output.innerText = 'My number is bigger';
+            output.innerText = 'Your number is bigger,enter 1-10';
              
         } else if (a < random) {
-            output.innerText = 'My number is smaller';
+            output.innerText = 'Your number is smaller,enter 1-10';
               
         } else {
-            output.innerText = 'correct';
+            output.innerText = 'correct,good job';
             clearInterval(t);
              
         };  

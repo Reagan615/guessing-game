@@ -158,7 +158,10 @@ ul {
     text-align: right;
   }
   
-   
+.control {
+    display: flex;
+
+}
   
   input[type="text"] {
     width: 100%;
@@ -200,7 +203,9 @@ ul {
     transition: all 0.25s ease-in-out;
     color: rgb(125, 125, 15);
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 95px;
+    margin-top: 80px;
+   
   }
   
    

@@ -78,8 +78,11 @@ onEvent('click', reset, function() {
     numberOne.value = '';
     output.innerText = '';
     location.reload();
+    /* let random = Math.round(Math.random()*10);
+    i = 20;
+    setInterval(countDown, 1000); */
 
-    
+  
 })
 
 

@@ -230,11 +230,24 @@ ul {
     font-weight: 600;
     font-size: 20px;
   }
+
+  .remind {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .remind span {
+    font-size: 24px;
+    color: #ff3c57;
+    font-weight: 600;
+  }
   
    
   
   .output {
-    margin-top: 40px;
+    margin-top: 20px;
     height: 52px;
     width: 30%;
     padding: 0 15px;

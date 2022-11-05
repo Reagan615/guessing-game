@@ -19,6 +19,7 @@ const numberOne = select('.number-one');
 const btn = select('.get-result');
 const output = select('.output p'); 
 const reset = select('.button');
+const remind = select('.remind span')
 
 
 
@@ -36,8 +37,13 @@ let i = 20;
          second.innerHTML = i + 's';
 
          // 20 秒倒计时结束
-         if (i === 0)
-             clearInterval(t);
+         if (i === 0) {
+            clearInterval(t);
+             btn.setAttribute("disabled", true);
+             btn.style.backgroundColor = "#7d87aa";
+             btn.style.color = "#fff";
+             btn.style.cursor = "not-allowed";
+         }
          i--;
 }
 
@@ -54,22 +60,40 @@ function isNumber(str) {
 
 onEvent('click', btn, function() {
     let a = numberOne.value.trim();
-    if(isNumber(a)) {
-        if(a > random) {
-            output.innerText = 'Your number is bigger,enter 1-10';
-             
-        } else if (a < random) {
-            output.innerText = 'Your number is smaller,enter 1-10';
-              
-        } else {
-            output.innerText = 'correct,good job';
-            clearInterval(t);
-             
-        };  
+    let b = remind.innerText;
+    console.log(b);
+    if(b > 0) {
+        remind.innerText--;
     } else {
-        output.innerText = 'Please, enter valid numbers';
+        btn.setAttribute("disabled", true);
+        btn.style.backgroundColor = "#7d87aa";
+        btn.style.color = "#fff";
+        btn.style.cursor = "not-allowed"; 
     }
-
+    
+        if(isNumber(a)) {
+            if(a > random) {
+                output.innerText = 'Your number is bigger,enter 1-10';
+                 
+            } else if (a < random) {
+                output.innerText = 'Your number is smaller,enter 1-10'; 
+            } else {
+                output.innerText = 'correct,good job';
+                clearInterval(t);
+                btn.setAttribute("disabled", true);
+                btn.style.backgroundColor = "#7d87aa";
+                btn.style.color = "#fff";
+                btn.style.cursor = "not-allowed"; 
+            };  
+        } else {
+            output.innerText = 'Please, enter valid numbers';
+        }
+        if(remind.innerText === 0) {
+            btn.setAttribute("disabled", true);
+                btn.style.backgroundColor = "#7d87aa";
+                btn.style.color = "#fff";
+                btn.style.cursor = "not-allowed";
+        }
 }); 
 
 

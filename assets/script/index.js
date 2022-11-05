@@ -69,7 +69,7 @@ onEvent('click', btn, function() {
         btn.style.backgroundColor = "#7d87aa";
         btn.style.color = "#fff";
         btn.style.cursor = "not-allowed"; 
-    }
+    };
     
         if(isNumber(a)) {
             if(a > random) {

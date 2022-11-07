@@ -17,23 +17,69 @@ The following will introduce the three operation instructions that are mainly in
 `Math.random()`：Math.random() returns a random number between 0 (inclusive), and 1 (exclusive).
 
 For example:<br>
-<img src="assets/random.png" >
+```
+let random = Math.floor(Math.random()*10 + 1);
+console.log(random); 
+```
 
 ### 2. Use `setInterval` to create a 20-second countdown.
 `setInterval()`：The setInterval() method calls a function at specified intervals (in milliseconds).The setInterval() method continues calling the function until clearInterval() is called, or the window is closed.1 second = 1000 milliseconds.
 
 For example:<br>
-<img src="assets/countDown.png" >
+```
+let i = 20;
+ let t = setInterval(countDown, 1000);
+
+ function countDown() {
+         console.log(i);
+         second.innerHTML = i + 's';
+         if (i === 0) {
+            clearInterval(t);
+             btn.setAttribute("disabled", true);
+             btn.style.backgroundColor = "#7d87aa";
+             btn.style.color = "#fff";
+             btn.style.cursor = "not-allowed";
+         }
+         i--;
+}
+```
 
 ### 3. Use `innerText` to give relevant prompt information
 `InnerText`:Get the inner text of an element.
 
 For example:<br>
-<img src="assets/innerText.png" >
+```
+output.innerText = 'Your number is bigger,enter 1-10';
+```
 
 ## Part of the code display
 The code display in the game is mainly used to judge the relationship between the input number and the answer.<br>
-<img src="assets/code example.png" ><br>
+```
+if(isNumber(a)) {
+            if(a > random) {
+                output.innerText = 'Your number is bigger,enter 1-10';
+                 
+            } else if (a < random) {
+                output.innerText = 'Your number is smaller,enter 1-10'; 
+            } else {
+                output.innerText = 'correct,good job';
+                clearInterval(t);
+                btn.setAttribute("disabled", true);
+                btn.style.backgroundColor = "#7d87aa";
+                btn.style.color = "#fff";
+                btn.style.cursor = "not-allowed"; 
+            };  
+        } else {
+            output.innerText = 'Please, enter valid numbers';
+        }
+        if(remind.innerText === 0) {
+            btn.setAttribute("disabled", true);
+                btn.style.backgroundColor = "#7d87aa";
+                btn.style.color = "#fff";
+                btn.style.cursor = "not-allowed";
+        }
+}); 
+```
 
 ## Demo
 ### **If you are interested in this game:blush:，just click [here](https://reagan615.github.io/guessing-game/) to play.**<br>

@@ -21,22 +21,17 @@ const output = select('.output p');
 const reset = select('.button');
 const remind = select('.remind span')
 
-
-
-let random = Math.round(Math.random()*10);
+let random = Math.floor(Math.random()*10 + 1);
 console.log(random); 
 
 const second = select('.second');
-let i = 20;
 
- // 定时器 每隔一秒变化一次（1000ms = 1s）
+let i = 20;
  let t = setInterval(countDown, 1000);
 
  function countDown() {
          console.log(i);
          second.innerHTML = i + 's';
-
-         // 20 秒倒计时结束
          if (i === 0) {
             clearInterval(t);
              btn.setAttribute("disabled", true);
@@ -97,16 +92,10 @@ onEvent('click', btn, function() {
 }); 
 
 
-
 onEvent('click', reset, function() {
     numberOne.value = '';
     output.innerText = '';
     location.reload();
-    /* let random = Math.round(Math.random()*10);
-    i = 20;
-    setInterval(countDown, 1000); */
-
-  
 })
 
 
